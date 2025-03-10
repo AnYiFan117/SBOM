@@ -1,0 +1,7 @@
+tools:
+  python:
+    command:"cyclonedx-py"
+  java:
+    command:"cyclonedx-maven"
+  go:
+    command:"cyclonedx-go"
