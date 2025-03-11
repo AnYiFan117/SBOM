@@ -1,7 +1,7 @@
 tools:
   python:
-    command:"cyclonedx-py"
+    cyclonedx-py
   java:
-    command:"cyclonedx-maven"
+    mvn org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom
   go:
-    command:"cyclonedx-go"
+    cyclonedx-go -o sbom.json

@@ -1,6 +1,6 @@
 import os, subprocess, json
 
-def generate_sbom(project_path: str):
+def generate_sbom(project_path: str, command: str):
     """
     针对 Go 项目生成 SBOM。
     可通过调用 cyclonedx-maven-plugin 或其他工具实现
@@ -14,12 +14,11 @@ def generate_sbom(project_path: str):
         print("请自行安装Golang version>=1.18")
         os.chdir(project_path)
         # 安装SBOM工具
-        print("正在安装SBOM工具...")
-        os.system("go install github.com/ozonru/cyclonedx-go/cmd/cyclonedx-go@latest")
+        # print("正在安装SBOM工具...")
+        # os.system("go install github.com/ozonru/cyclonedx-go/cmd/cyclonedx-go@latest")
         # 执行
         print("正在执行...")
-        cmd = f"cyclonedx-go -o sbom.json"
-        result = subprocess.run(cmd, shell=True, check=True)
+        result = subprocess.run(command, shell=True, check=True)
         print(f"SBOM生成完毕，保存在sbom.json中")
     except Exception as e:
         print("请检查在环境中是否有Golang")

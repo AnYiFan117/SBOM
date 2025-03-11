@@ -1,6 +1,6 @@
 import yaml
 
-def load_config(config_path: str):
+def load_myconfig(config_path: str):
     """
     加载 YAML 格式的配置文件
     """
